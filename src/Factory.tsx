@@ -5,7 +5,7 @@ import React, { useEffect, useMemo, useRef } from 'react';
 import { randomColor } from './utils/color';
 import { randomTransform } from './utils/transforms';
 import { Text, useGLTF } from '@react-three/drei';
-import { Box3, MathUtils, Mesh, Object3D, Vector3 } from 'three';
+import { Box3, MathUtils, Vector3 } from 'three';
 import { useStore } from './utils/store';
 import { DigitalNumbers } from './items/DigitalNumber';
 
@@ -255,7 +255,6 @@ const Conveyor = (
 type PhyPlaneProps = {
   rotation?: [number, number, number],
   position?: [number, number, number],
-  scale?: [number, number, number],
   color?: string,
   size?: [number, number],
   onCollide?: (e: any) => void,
@@ -264,10 +263,9 @@ const PhyPlane = (
   { 
     rotation = [0, 0, 0],
     position = [0, 0, 0], 
-    scale = [1, 1, 1],
     color = "gray",
     size = [1, 1],
-    onCollide = (e) => {},
+    onCollide = (_e) => {},
   }: PhyPlaneProps
 ) => {
   // const scaleSize: Triplet = scale;
