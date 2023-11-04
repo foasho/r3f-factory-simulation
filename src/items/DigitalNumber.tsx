@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { DoubleSide } from "three";
 
 type Digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 type DigitalNumbersProps = {
@@ -381,17 +382,17 @@ const DigitalNumberBar = (
       {/** 三角形 */}
       <mesh position={[1.64, 0, 0]} scale={[0.5, 0.85, 1]}>
         <circleGeometry args={[0.575, 3, 0, 2 * Math.PI]} />
-        <meshBasicMaterial color={color} />
+        <meshBasicMaterial color={color} side={DoubleSide} />
       </mesh>
       {/** 矩形 */}
       <mesh scale={[3, 0.85, 1]}>
         <planeGeometry args={[1, 1]} />
-        <meshBasicMaterial color={color} />
+        <meshBasicMaterial color={color} side={DoubleSide} />
       </mesh>
       {/** 三角形 */}
       <mesh position={[-1.64, 0, 0]} rotation={[0, 0, Math.PI]} scale={[0.5, 0.85, 1]}>
         <circleGeometry args={[0.575, 3, 0, 2 * Math.PI]} />
-        <meshBasicMaterial color={color} />
+        <meshBasicMaterial color={color} side={DoubleSide} />
       </mesh>
     </group>
   )
